@@ -17,6 +17,7 @@ class RDeseq2(RPackage):
     homepage = "https://bioconductor.org/packages/DESeq2"
     git = "https://git.bioconductor.org/packages/DESeq2.git"
 
+    version("1.44.0", commit="5facd3093468ce2e75a2b742b1533efee13e5818")
     version("1.40.0", commit="c4962c3b16546e552fbc1a712258e4e21ff44241")
     version("1.38.0", commit="0e059f425d4ce6a5203685a4ad434f15bbd6e211")
     version("1.36.0", commit="2800b78ae52c0600f7e603c54af59beed3a2ed17")
@@ -38,9 +39,11 @@ class RDeseq2(RPackage):
     depends_on("r-biocparallel", type=("build", "run"))
     depends_on("r-matrixstats", type=("build", "run"), when="@1.40.0:")
     depends_on("r-locfit", type=("build", "run"))
-    depends_on("r-ggplot2", type=("build", "run"))
+    depends_on("r-ggplot2", type=("build", "run"), when="@:1.41.9")
+    depends_on("r-ggplot2@3.4.0:", type=("build", "run"), when="@1.41.9:")
     depends_on("r-rcpp@0.11.0:", type=("build", "run"))
     depends_on("r-rcpparmadillo", type=("build", "run"))
+    depends_on("r-matrixgenerics", type=("build", "run"), when="@1.41.8:")
 
     depends_on("r-hmisc", type=("build", "run"), when="@:1.30.0")
     depends_on("r-genefilter", type=("build", "run"), when="@:1.38.0")
