@@ -20,6 +20,7 @@ class RDelayedarray(RPackage):
 
     bioc = "DelayedArray"
 
+    version("0.30.1", commit="099a64332ede8db85d4150adba76c8126c3d4d3a")
     version("0.26.0", commit="e3bdae96838a8ed45f18697f072f3c4ec011aa03")
     version("0.24.0", commit="68ee3d0626c234ee1e9248a6cb95b901e4b3ad90")
     version("0.22.0", commit="4a5afd117b189b40bd409c7aff60e09d41797472")
@@ -50,6 +51,12 @@ class RDelayedarray(RPackage):
     depends_on("r-iranges", type=("build", "run"))
     depends_on("r-iranges@2.11.17:", type=("build", "run"), when="@0.4.1:")
     depends_on("r-iranges@2.17.3:", type=("build", "run"), when="@0.10.0:")
+    depends_on("r-s4arrays@1.1.1:", type=("build", "run"), when="@0.27.1:")
+    depends_on("r-s4arrays@1.3.3:", type=("build", "run"), when="@0.29.2:")
+    depends_on("r-s4arrays@1.3.4:", type=("build", "run"), when="@0.29.8:")
+    depends_on("r-s4arrays@1.3.5:", type=("build", "run"), when="@0.29.9:")
+    depends_on("r-sparsearray@1.1.5:", type=("build", "run"), when="@0.27.3:")
+    depends_on("r-sparsearray@1.1.10:", type=("build", "run"), when="@0.27.5:")
 
     depends_on("r-matrixstats", type=("build", "run"), when="@:0.10.0")
     depends_on("r-biocparallel", type=("build", "run"), when="@0.6.6:0.10.0")
